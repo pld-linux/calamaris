@@ -45,7 +45,6 @@ MAIL_SUBJ="Calamaris Report"
 call_calamaris() {
 	(
 	for FILE in $1; do
-		echo Processing $FILE >&2
 		if [[ $FILE = *.gz ]]; then
 			zcat $FILE
 		else
@@ -68,7 +67,6 @@ make_stats() {
 		else
 			ARG="$ARG_PLAIN"
 		fi
-#		echo "Saving to $3...">&2
 		call_calamaris "$1" "$ARG" > $3
 	fi
 
@@ -82,12 +80,10 @@ make_stats() {
 		# If statistics have to be mailed in same format as they were
 		# saved we don't need to call Calamaris again.
 		if [[ $2 = *save* && $SAVE_FORMAT = $SEND_FORMAT ]]; then
-#			echo "Sending already generated report to $SEND_TO" >&2
 			(
 			cat $3
 			) | mail -s "$MAIL_SUBJ" $SEND_TO
 		else
-#			echo "Sending to $SEND_TO" >&2
 			call_calamaris "$1" "$ARG" | mail -s "$MAIL_SUBJ" $SEND_TO
 		fi
 	fi
