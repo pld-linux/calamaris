@@ -24,7 +24,7 @@ must-have for Squid/NetCache administrators.
 %description -l pl
 Calamaris generuje informacje statystyczne o pracy Squida i NetCache w
 oparciu o ich logi. Potrafi tworzyæ raporty w postaci czystego tekstu
-jak i HTML. Niezbêdny dla administratorów Squida i NetCache.
+jak i HTML-a. Niezbêdny dla administratorów Squida i NetCache.
 
 %prep
 %setup -q
