@@ -39,7 +39,7 @@ CALAMARIS_ARGS="-a"
 [ -f /etc/sysconfig/calamaris ] && . /etc/sysconfig/calamaris
 
 # Parameter passed to Calamaris.
-ARG_HTML="$CALAMARIS_ARGS -F 'html' -l $LOGO"
+ARG_HTML="$CALAMARIS_ARGS -F html -l $LOGO"
 ARG_MAIL="$CALAMARIS_ARGS -a -m Calamaris report"
 MAIL_SUBJ="Calamaris Report"
 
@@ -51,8 +51,11 @@ call_calamaris() {
 	for FILE in $1; do
 		if [[ $FILE = *.gz ]]; then
 			zcat $FILE
+		else if [[ $FILE = *.bz2 ]]; then
+			bzcat $FILE
 		else
 			cat $FILE
+		fi
 		fi
 	done
 	) | calamaris $2
