@@ -3,7 +3,7 @@ Summary(pl):	Generator raportów dla Squid'a i NetCache
 Name:		calamaris
 Version:	2.29
 Release:	1
-Copyright:	GPL
+License:	GPL
 Group:		Networking/Utilities
 Group(pl):	Sieciowe/Narzêdzia
 Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
