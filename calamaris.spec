@@ -1,9 +1,14 @@
+#
+# TODO:
+#   - think about default directory for calamaris output (somwhere in /var) so
+#   it works out-of-the-box
+#
 %include        /usr/lib/rpm/macros.perl
 Summary:	Squid and NetCache log parser and report generator
 Summary(pl):	Generator raportów dla Squida i NetCache
 Name:		calamaris
 Version:	2.58
-Release:	4
+Release:	5
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
@@ -15,6 +20,9 @@ URL:		http://cord.de/tools/squid/calamaris/Welcome.html
 Requires:	/bin/zcat
 Requires:	/etc/cron.d
 Requires:	crontabs
+Requires:	setup >= 2.4.6
+Conflicts:	squid < 7:2.5.STABLE7-5
+Conflicts:	logrotate < 3.7-3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
