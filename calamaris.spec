@@ -11,9 +11,9 @@ Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
 Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
+Requires:	/bin/zcat
 Requires:	/etc/cron.d
 Requires:	crontabs
-Requires:	/bin/zcat
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
