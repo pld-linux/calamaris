@@ -1,8 +1,8 @@
 Summary:	Squid and NetCache log parser and report generator
 Summary(pl):	Generator raportów dla Squida i NetCache
 Name:		calamaris
-Version:	2.42
-Release:	2
+Version:	2.45
+Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Group(de):	Netzwerkwesen/Werkzeuge
