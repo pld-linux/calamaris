@@ -49,7 +49,8 @@
 # gzipped. PLD uses delayed compression. This means that newest log file
 # isn't compressed.
 # There is no default. You have to put something here.
-DAILY_FILES="/var/log/archiv/squid/access.log.1"
+DAILY_FILES="/var/log/archiv/squid/access.log.1.gz"
+
 
 # Where to save daily stats. Ignored if DAILY_ACTION doesn't contain "save".
 # There is no default. You have to put something here.
