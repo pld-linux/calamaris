@@ -17,14 +17,14 @@ Requires:	crontabs
 Requires:	/bin/zcat
 
 %description
-Calamaris is statistical info generator for Squid and NetCache based on log
-parsing. It can create both plain-text and HTML reports. A must-have for
-Squid/NetCache administrators.
+Calamaris is statistical info generator for Squid and NetCache based
+on log parsing. It can create both plain-text and HTML reports. A
+must-have for Squid/NetCache administrators.
 
 %description -l pl
-Calamaris generuje informacje statystyczne o pracy Squid'a i NetCache w
-oparciu o ich logi. Potrafi tworzyæ raporty w postaci czystego tekstu jak i
-HTML. Niezbêdny dla administratorów Squid'a i NetCache.
+Calamaris generuje informacje statystyczne o pracy Squid'a i NetCache
+w oparciu o ich logi. Potrafi tworzyæ raporty w postaci czystego
+tekstu jak i HTML. Niezbêdny dla administratorów Squid'a i NetCache.
 
 %prep
 %setup -q -a 0
