@@ -42,8 +42,7 @@ install %{SOURCE3} $RPM_BUILD_ROOT%{_sbindir}
 install calamaris $RPM_BUILD_ROOT%{_bindir}
 install calamaris.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
-gzip -9nf $RPM_BUILD_ROOT%{_mandir}/*/* \
-	CHANGES COPYRIGHT EXAMPLES README
+gzip -9nf CHANGES EXAMPLES README
 
 %clean
 rm -rf $RPM_BUILD_ROOT
