@@ -1,0 +1,2 @@
+- added ".gz" suffix to /var/log/archiv/squid/acces.log.1 (it is gzipped file)
+- release 2, STB
