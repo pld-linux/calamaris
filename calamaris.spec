@@ -10,7 +10,7 @@ Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
 Source1:	calamaris.crontab
 Source2:	calamaris.sysconfig
 Source3:	calamaris-croniface
-BuildRoot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Prereq:		/sbin/chkconfig
 Requires:	/etc/cron.d
 Requires:	crontabs
