@@ -12,13 +12,13 @@
 # (-t 20).
 #CALAMARIS_ARGS="-a"
 
-# Reports can be generated as plin-text or HTML. This variable selects format
+# Reports can be generated as plain-text or HTML. This variable selects format
 # in which reports will be saved (if you enable saving them later in this
 # file). Can be "plain" or "HTML". Default is "HTML" and if this is OK for you,
 # you don't have to set this variable.
 #SAVE_FORMAT="HTML"
 
-# If reports are saved in http daemons directory, they should have correrct
+# If reports are saved in http daemons directory, they should have correct
 # permissions and owner, so the daemon can read them. By default user and
 # group are "nobody.nobody" and the permissions are "u=rw,g=r,o=r". You can
 # use any syntax accepted by chown and chmod.
@@ -29,12 +29,12 @@
 # format. Default is shown below.
 #HTML_LOGO="<H1>Caching Proxy Statistics</H1>"
 
-# This variable selects format of reports send via email. Can be "plain" or
+# This variable selects format of reports sent via email. Can be "plain" or
 # "HTML". Default is "plain" and if this is OK for you, you don't have to set
 # this variable.
 #SEND_FORMAT="plain"
 
-# If you select to have reports delivered via email, they will be sent to
+# If you choose to have reports delivered via email, they will be sent to
 # this address. Default is "root" and if this is OK for you, you don't have
 # to set this variable.
 #SEND_TO="root"
@@ -44,13 +44,10 @@
 # you, you don't have to set this variable.
 #DAILY_ACTION="send"
 
-# Logs to parse in order to create daily stats. Because of asumption that
-# this script is run *after* logrotate, log file is already compressed and
-# gzipped. PLD uses delayed compression. This means that newest log file
-# isn't compressed.
-# There is no default. You have to put something here.
+# Logs to parse in order to create daily stats. Because of assumption that
+# this script is run *after* logrotate, log file is already gzipped. There
+# is no default. You have to put something here.
 DAILY_FILES="/var/log/archiv/squid/access.log.1.gz"
-
 
 # Where to save daily stats. Ignored if DAILY_ACTION doesn't contain "save".
 # There is no default. You have to put something here.
@@ -61,9 +58,8 @@ DAILY_SAVE_AS="/home/httpd/html/cache_log/daily.html"
 # you, you don't have to set this variable.
 #WEEKLY_ACTION="send"
 
-# Logs to parse in order to create weekly stats. Because of asumption that
-# this script is run *after* logrotate, all log files are already compressed
-# and gzipped.
+# Logs to parse in order to create weekly stats. Because of assumption that
+# this script is run *after* logrotate, all log files are already gzipped.
 # There is no default. You have to put something here.
 WEEKLY_FILES=/var/log/archiv/squid/access.log.{7,6,5,4,3,2,1}*
 
