@@ -19,10 +19,12 @@
 #SAVE_FORMAT="HTML"
 
 # If reports are saved in http daemons directory, they should have correct
-# permissions and owner, so the daemon can read them. By default user and
-# group are "nobody.nobody" and the permissions are "u=rw,g=r,o=r". You can
-# use any syntax accepted by chown and chmod.
-#SAVE_OWNER="nobody.nobody"
+# permissions and owner, so the daemon can read them. This can be changed
+# only when calamaris is run as root (insecure!)
+
+# By default user and group are not set the permissions are "u=rw,g=r,o=r". You
+# can use any syntax accepted by chown and chmod.
+#SAVE_OWNER="root.http"
 #SAVE_PERM="u=rw,g=r,o=r"
 
 # This piece of HTML code is inserted at top of reports generated in HTML
