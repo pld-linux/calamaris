@@ -1,5 +1,5 @@
 Summary:	Squid and NetCache log parser and report generator
-Summary(pl):	Generator raportów dla Squid'a i NetCache
+Summary(pl):	Generator raportów dla Squida i NetCache
 Name:		calamaris
 Version:	2.42
 Release:	1
@@ -13,7 +13,6 @@ Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
 Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
-Prereq:		/sbin/chkconfig
 Requires:	/etc/cron.d
 Requires:	crontabs
 Requires:	/bin/zcat
@@ -25,12 +24,12 @@ on log parsing. It can create both plain-text and HTML reports. A
 must-have for Squid/NetCache administrators.
 
 %description -l pl
-Calamaris generuje informacje statystyczne o pracy Squid'a i NetCache
+Calamaris generuje informacje statystyczne o pracy Squida i NetCache
 w oparciu o ich logi. Potrafi tworzyæ raporty w postaci czystego
-tekstu jak i HTML. Niezbêdny dla administratorów Squid'a i NetCache.
+tekstu jak i HTML. Niezbêdny dla administratorów Squida i NetCache.
 
 %prep
-%setup -q -a 0
+%setup -q
 
 %install
 rm -rf $RPM_BUILD_ROOT
