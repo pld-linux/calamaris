@@ -11,11 +11,11 @@ Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
 Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Prereq:		/sbin/chkconfig
 Requires:	/etc/cron.d
 Requires:	crontabs
 Requires:	/bin/zcat
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Calamaris is statistical info generator for Squid and NetCache based
@@ -29,8 +29,6 @@ tekstu jak i HTML. Niezbêdny dla administratorów Squid'a i NetCache.
 
 %prep
 %setup -q -a 0
-
-%build
 
 %install
 rm -rf $RPM_BUILD_ROOT
