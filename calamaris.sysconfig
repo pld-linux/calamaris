@@ -1,0 +1,64 @@
+# Customized settings for Calamaris
+# $Id$
+# Check /usr/share/doc/calamaris*/examples for some examples.
+
+# This file is written with few assumptions:
+# 1. Calamaris is run AFTER logrotate.
+# 2. Old logs are compressed (gzipped).
+# 3. Logs are rotated daily.
+
+# Arguments passed to Calamaris. See calamaris(1) man page for details.
+# Default is "-a" which produces all kinds, except for peek, of reports:
+# domain (-d 20), performance (-P 60), requester (-r -1), status (-s) and type
+# (-t 20).
+#CALAMARIS_ARGS="-a"
+
+# Reports can be generated as plin-text or HTML. This variable selects format
+# in which reports will be saved (if you enable saving them later in this
+# file). Can be "plain" or "HTML". Default is "HTML" and if this is OK for you,
+# you don't have to set this variable.
+#SAVE_FORMAT="HTML"
+
+# This piece of HTML code is inserted at top of reports generated in HTML
+# format. Default is shown below.
+#HTML_LOGO="<H1>Caching Proxy Statistics</H1>"
+
+# This variable selects format of reports send via email. Can be "plain" or
+# "HTML". Default is "plain" and if this is OK for you, you don't have to set
+# this variable.
+#SEND_FORMAT="plain"
+
+# If you select to have reports delivered via email, they will be sent to
+# this address. Default is "root" and if this is OK for you, you don't have
+# to set this variable.
+#SEND_TO="root"
+
+# What to do with daily statistics. Can be "save", "send" or both. If empty,
+# daily statistics aren't generated. Default is "send" and if this is OK for
+# you, you don't have to set this variable.
+#DAILY_ACTION="send"
+
+# Logs to parse in order to create daily stats. Because of asumption that
+# this script is run *after* logrotate, log file is already compressed and
+# gzipped. Remember to not use any quotation if you want to use shell globs.
+# There is no default. You have to put something here.
+DAILY_FILES="/var/log/archiv/squid/access.log.1.gz"
+
+# Where to save daily stats. Ignored if DAILY_ACTION doesn't contain "save".
+# There is no default. You have to put something here.
+DAILY_SAVE_AS="/home/httpd/html/cache_log/daily.html"
+
+# What to do with weekly statistics. Can be "save", "send" or both. If empty,
+# weekly statistics aren't generated. Default is "send" and if this is OK for
+# you, you don't have to set this variable.
+#WEEKLY_ACTION="send"
+
+# Logs to parse in order to create weekly stats. Because of asumption that
+# this script is run *after* logrotate, all log files are already compressed
+# and gzipped. Remember to not use any quotation if you want to use shell
+# globs. There is no default. You have to put something here.
+WEEKLY_FILES=/var/log/archiv/squid/access.log.{7,6,5,4,3,2,1}*
+
+# Where to save weekly stats. Ignored if WEEKLY_ACTION doesn't contain "save".
+# There is no default. You have to put something here.
+WEEKLY_SAVE_AS=/home/httpd/html/cache_log/weekly.html
