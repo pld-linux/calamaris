@@ -11,6 +11,7 @@ Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
 Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
+URL:		http://cord.de/tools/squid/calamaris/Welcome.html
 Requires:	/bin/zcat
 Requires:	/etc/cron.d
 Requires:	crontabs
