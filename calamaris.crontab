@@ -1,4 +1,4 @@
 PATH = /sbin:/bin:/usr/sbin:/usr/bin
 
-30 0 * * *	root	cat /var/log/squid/access.log.0 | nice -39 calamaris -amH 'Squid log - daily' | mail root
-0 3 * * 7	root	cat /var/log/squid/access.log.[0-6] | nice -39 calamaris -amH 'Squid log - weekly' | mail root
+30 0 * * *	root	cat /var/log/squid/access.0 | nice -n 15 calamaris -amH 'Squid log - daily' | mail root
+0 3 * * 7	root	cat /var/log/squid/access.[0-6] | nice -n 15 calamaris -amH 'Squid log - weekly' | mail root
