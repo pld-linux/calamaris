@@ -5,10 +5,6 @@ Version:	2.45
 Release:	2
 License:	GPL
 Group:		Networking/Utilities
-Group(de):	Netzwerkwesen/Werkzeuge
-Group(es):	Red/Utilitarios
-Group(pl):	Sieciowe/Narzêdzia
-Group(pt_BR):	Rede/Utilitários
 Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
 Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
