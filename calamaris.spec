@@ -1,9 +1,9 @@
 #
 # TODO:
-#   - think about default directory for calamaris output (somwhere in /var) so
+# - think about default directory for calamaris output (somwhere in /var) so
 #   it works out-of-the-box
 #
-%include        /usr/lib/rpm/macros.perl
+%include	/usr/lib/rpm/macros.perl
 Summary:	Squid and NetCache log parser and report generator
 Summary(pl):	Generator raportów dla Squida i NetCache
 Name:		calamaris
