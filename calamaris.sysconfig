@@ -1,6 +1,5 @@
 # Customized settings for Calamaris
 # $Id$
-# Check /usr/share/doc/calamaris*/examples for some examples.
 
 # This file is written with few assumptions:
 # 1. Calamaris is run AFTER logrotate.
@@ -18,6 +17,12 @@
 # file). Can be "plain" or "HTML". Default is "HTML" and if this is OK for you,
 # you don't have to set this variable.
 #SAVE_FORMAT="HTML"
+
+# If reports are saved in http daemons directory, they should have correrct
+# permissions and owner, so the daemon can read them. By default user and
+# group are "nobody.nobody" and the permissions are "rw-r--r--".
+#SAVE_OWNER="nobody.nobody"
+#SAVE_PERM="rw-r--r--"
 
 # This piece of HTML code is inserted at top of reports generated in HTML
 # format. Default is shown below.

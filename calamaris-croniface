@@ -16,6 +16,8 @@
 
 # Default configuration.
 SAVE_FORMAT="HTML"
+SAVE_OWNER="nobody.nobody"
+SAVE_PERM="rw-r--r--"
 SEND_FORMAT="plain"
 SEND_TO="root"
 DAILY_ACTION="send"
@@ -68,6 +70,8 @@ make_stats() {
 			ARG="$ARG_PLAIN"
 		fi
 		call_calamaris "$1" "$ARG" > $3
+		chown $SAVE_OWNER $3
+		chmod $SAVE_PERM $3
 	fi
 
 	# Generate statistics and send them.
