@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc *.gz
-%attr(750,root,root) /etc/cron.d/calamaris
+%attr(750,root,root) %config(noreplace) /etc/cron.d/calamaris
 %attr(640,root,root) %config(noreplace) %verify(not size mtime md5) /etc/sysconfig/calamaris
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
