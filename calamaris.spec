@@ -7,6 +7,7 @@ Release:	1
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://Cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
+# Source0-md5:	96383551b2e2aee188a221ef141167ce
 Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
