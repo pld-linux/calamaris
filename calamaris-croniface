@@ -11,25 +11,27 @@
 #
 # Author:	Micha³ Kochanowicz <mkochano@pld.org.pl>
 
-# Wrapper for Calamaris. Reads configuration and calls Calamaris with
-# appropriate arguments.
-
 # Default configuration.
 SAVE_FORMAT="HTML"
 SAVE_OWNER="nobody.nobody"
 SAVE_PERM="u=rw,g=r,o=r"
 SEND_FORMAT="plain"
 SEND_TO="root"
+
+# DAILY ---------------------------------------------------------------
 DAILY_ACTION="send"
 DAILY_FILES=
 # If you have an idea of better default setting for this variable you are
 # welcome to change it, but please don't assume that caching proxy is also
 # a http server...
 DAILY_SAVE_AS="/dev/null"
+
+# WEEKLY --------------------------------------------------------------
 WEEKLY_ACTION="send"
 WEEKLY_FILES=
 # See comment above.
 WEEKLY_SAVE_AS="/dev/null"
+
 HTML_LOGO="<H1>Caching Proxy Statistics</H1>"
 CALAMARIS_ARGS="-a"
 
@@ -95,9 +97,9 @@ make_stats() {
 
 
 if [ "$1" = "daily" ]; then
-	make_stats "$DAILY_FILES" "$DAILY_ACTION" $DAILY_SAVE_AS
+	make_stats "$DAILY_FILES" "$DAILY_ACTION" "$DAILY_SAVE_AS"
 elif [ "$1" = "weekly" ]; then
-	make_stats "$WEEKLY_FILES" "$WEEKLY_ACTION" $WEEKLY_SAVE_AS
+	make_stats "$WEEKLY_FILES" "$WEEKLY_ACTION" "$WEEKLY_SAVE_AS"
 else
 	echo 'Make up your mind!' >&2
 fi
