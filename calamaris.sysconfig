@@ -20,9 +20,10 @@
 
 # If reports are saved in http daemons directory, they should have correrct
 # permissions and owner, so the daemon can read them. By default user and
-# group are "nobody.nobody" and the permissions are "rw-r--r--".
+# group are "nobody.nobody" and the permissions are "u=rw,g=r,o=r". You can
+# use any syntax accepted by chown and chmod.
 #SAVE_OWNER="nobody.nobody"
-#SAVE_PERM="rw-r--r--"
+#SAVE_PERM="u=rw,g=r,o=r"
 
 # This piece of HTML code is inserted at top of reports generated in HTML
 # format. Default is shown below.

@@ -17,7 +17,7 @@
 # Default configuration.
 SAVE_FORMAT="HTML"
 SAVE_OWNER="nobody.nobody"
-SAVE_PERM="rw-r--r--"
+SAVE_PERM="u=rw,g=r,o=r"
 SEND_FORMAT="plain"
 SEND_TO="root"
 DAILY_ACTION="send"
