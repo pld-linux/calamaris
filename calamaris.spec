@@ -40,6 +40,11 @@ jak i HTML-a. Niezbêdny dla administratorów Squida i NetCache.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+for i in calamaris calamaris.conf ; do
+	sed 's/use ident/use the ident/' < $i > $i.new
+	mv $i.new $i
+done
+
 install -d $RPM_BUILD_ROOT{/etc/{cron.d,sysconfig},%{_bindir},%{_sbindir},%{_mandir}/man1}
 
 install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/calamaris
