@@ -1,4 +1,3 @@
-#
 # TODO:
 # - think about default directory for calamaris output (somwhere in /var) so
 #   it works out-of-the-box
@@ -17,12 +16,13 @@ Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
 URL:		http://cord.de/tools/squid/calamaris/Welcome.html
+BuildRequires:	sed >= 4.0
 Requires:	/bin/zcat
 Requires:	/etc/cron.d
 Requires:	crontabs
 Requires:	setup >= 2.4.6
-Conflicts:	squid < 7:2.5.STABLE7-5
 Conflicts:	logrotate < 3.7-3
+Conflicts:	squid < 7:2.5.STABLE7-5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -37,13 +37,10 @@ jak i HTML-a. Niezbêdny dla administratorów Squida i NetCache.
 
 %prep
 %setup -q
+%{__sed} -i -e 's/use ident/use the ident/' calamaris calamaris.conf
 
 %install
 rm -rf $RPM_BUILD_ROOT
-for i in calamaris calamaris.conf ; do
-	sed 's/use ident/use the ident/' < $i > $i.new
-	mv $i.new $i
-done
 
 install -d $RPM_BUILD_ROOT{/etc/{cron.d,sysconfig},%{_bindir},%{_sbindir},%{_mandir}/man1}
 
