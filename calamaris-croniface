@@ -51,11 +51,10 @@ call_calamaris() {
 	for FILE in $1; do
 		if [[ $FILE = *.gz ]]; then
 			zcat $FILE
-		else if [[ $FILE = *.bz2 ]]; then
+		elif [[ $FILE = *.bz2 ]]; then
 			bzcat $FILE
 		else
 			cat $FILE
-		fi
 		fi
 	done
 	) | calamaris $2
