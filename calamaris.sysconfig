@@ -46,6 +46,9 @@
 # you, you don't have to set this variable.
 #DAILY_ACTION="send"
 
+# Top directory where to save output files
+OUTPUT_DIR="/home/services/httpd/html/cache_log"
+
 # Logs to parse in order to create daily stats. Because of assumption that
 # this script is run *after* logrotate, log file is already gzipped. There
 # is no default. You have to put something here.
@@ -53,7 +56,7 @@ DAILY_FILES="/var/log/archiv/squid/access.log.1.gz"
 
 # Where to save daily stats. Ignored if DAILY_ACTION doesn't contain "save".
 # There is no default. You have to put something here.
-DAILY_SAVE_AS="/home/services/httpd/html/cache_log/daily.html"
+DAILY_SAVE_AS="$OUTPUT_DIR/daily.html"
 
 # What to do with weekly statistics. Can be "save", "send" or both. If empty,
 # weekly statistics aren't generated. Default is "send" and if this is OK for
@@ -67,5 +70,4 @@ WEEKLY_FILES=/var/log/archiv/squid/access.log.{7,6,5,4,3,2,1}*
 
 # Where to save weekly stats. Ignored if WEEKLY_ACTION doesn't contain "save".
 # There is no default. You have to put something here.
-WEEKLY_SAVE_AS="/home/services/httpd/html/cache_log/weekly.html"
-
+WEEKLY_SAVE_AS="$OUTPUT_DIR/weekly.html"
