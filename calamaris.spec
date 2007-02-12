@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Squid and NetCache log parser and report generator
-Summary(pl):	Generator raportów dla Squida i NetCache
+Summary(pl.UTF-8):   Generator raportÃ³w dla Squida i NetCache
 Name:		calamaris
 Version:	2.99.4.0
 Release:	1
@@ -30,10 +30,10 @@ Calamaris is statistical info generator for Squid and NetCache based
 on log parsing. It can create both plain-text and HTML reports. A
 must-have for Squid/NetCache administrators.
 
-%description -l pl
+%description -l pl.UTF-8
 Calamaris generuje informacje statystyczne o pracy Squida i NetCache w
-oparciu o ich logi. Potrafi tworzyæ raporty w postaci czystego tekstu
-jak i HTML-a. Niezbêdny dla administratorów Squida i NetCache.
+oparciu o ich logi. Potrafi tworzyÄ‡ raporty w postaci czystego tekstu
+jak i HTML-a. NiezbÄ™dny dla administratorÃ³w Squida i NetCache.
 
 %prep
 %setup -q
