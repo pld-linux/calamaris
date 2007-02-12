@@ -79,8 +79,8 @@ make_stats() {
 			exit 1
 		fi
 		call_calamaris "$1" "$ARG" > $3
-		[ -n "$SAVE_OWNER" ] || chown $SAVE_OWNER $3
-		[ -n "$SAVE_PERM" ] || chmod $SAVE_PERM $3
+		[ -n "$SAVE_OWNER" ] && chown $SAVE_OWNER $3
+		[ -n "$SAVE_PERM" ] && chmod $SAVE_PERM $3
 	fi
 
 	# Generate statistics and send them.
