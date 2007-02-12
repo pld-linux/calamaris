@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	Squid and NetCache log parser and report generator
-Summary(pl.UTF-8):   Generator raportów dla Squida i NetCache
+Summary(pl.UTF-8):	Generator raportów dla Squida i NetCache
 Name:		calamaris
 Version:	2.99.4.0
 Release:	1
@@ -23,6 +23,7 @@ Requires:	crontabs
 Requires:	setup >= 2.4.6
 Conflicts:	logrotate < 3.7-3
 Conflicts:	squid < 7:2.5.STABLE7-5
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
