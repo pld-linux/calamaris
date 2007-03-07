@@ -7,7 +7,7 @@ Summary:	Squid and NetCache log parser and report generator
 Summary(pl.UTF-8):	Generator raportów dla Squida i NetCache
 Name:		calamaris
 Version:	2.99.4.0
-Release:	1
+Release:	2
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
@@ -58,7 +58,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES EXAMPLES README
 %config(noreplace) /etc/cron.d/calamaris
-%attr(640,root,root) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/calamaris
+%attr(640,root,stats) %config(noreplace) %verify(not md5 mtime size) /etc/sysconfig/calamaris
 %attr(755,root,root) %{_bindir}/*
 %attr(755,root,root) %{_sbindir}/*
 %{_mandir}/*/*
