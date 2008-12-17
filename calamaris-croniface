@@ -39,7 +39,8 @@ CALAMARIS_ARGS="-a"
 [ -f /etc/sysconfig/calamaris ] && . /etc/sysconfig/calamaris
 
 # Parameter passed to Calamaris.
-ARG_HTML="$CALAMARIS_ARGS -F html -l $HTML_LOGO"
+# XXX: passing -l HTML_LOGO breaks here due
+ARG_HTML="$CALAMARIS_ARGS -F html"
 ARG_MAIL="$CALAMARIS_ARGS -a -m Calamaris report"
 MAIL_SUBJ="Calamaris Report"
 

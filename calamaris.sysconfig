@@ -52,7 +52,8 @@ OUTPUT_DIR="/home/services/httpd/html/cache_log"
 # Logs to parse in order to create daily stats. Because of assumption that
 # this script is run *after* logrotate, log file is already gzipped. There
 # is no default. You have to put something here.
-DAILY_FILES="/var/log/archive/squid/access.log.1.gz"
+# DAILY_FILES="/var/log/archive/squid/access.log.1.gz"
+DAILY_FILES=$(ls -1t /var/log/archive/squid/access.log-*.gz | head -n 1)
 
 # Where to save daily stats. Ignored if DAILY_ACTION doesn't contain "save".
 # There is no default. You have to put something here.
@@ -66,7 +67,8 @@ DAILY_SAVE_AS="$OUTPUT_DIR/daily.html"
 # Logs to parse in order to create weekly stats. Because of assumption that
 # this script is run *after* logrotate, all log files are already gzipped.
 # There is no default. You have to put something here.
-WEEKLY_FILES=/var/log/archive/squid/access.log.{7,6,5,4,3,2,1}*
+# WEEKLY_FILES=/var/log/archive/squid/access.log.{7,6,5,4,3,2,1}*
+WEEKLY_FILES=/var/log/archive/squid/access.log-*.gz
 
 # Where to save weekly stats. Ignored if WEEKLY_ACTION doesn't contain "save".
 # There is no default. You have to put something here.
