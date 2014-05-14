@@ -7,7 +7,7 @@ Summary:	Squid and NetCache log parser and report generator
 Summary(pl.UTF-8):	Generator raportów dla Squida i NetCache
 Name:		calamaris
 Version:	2.99.4.0
-Release:	2
+Release:	3
 License:	GPL
 Group:		Networking/Utilities
 Source0:	http://cord.de/tools/squid/calamaris/%{name}-%{version}.tar.gz
@@ -16,10 +16,10 @@ Source1:	%{name}.crontab
 Source2:	%{name}.sysconfig
 Source3:	%{name}-croniface
 URL:		http://cord.de/tools/squid/calamaris/Welcome.html
+BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	sed >= 4.0
 Requires:	/bin/zcat
-Requires:	/etc/cron.d
-Requires:	crontabs
+Requires:	crondaemon
 Requires:	setup >= 2.4.6
 Conflicts:	logrotate < 3.7-3
 Conflicts:	squid < 7:2.5.STABLE7-5
@@ -42,14 +42,13 @@ jak i HTML-a. Niezbędny dla administratorów Squida i NetCache.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 install -d $RPM_BUILD_ROOT{/etc/{cron.d,sysconfig},%{_bindir},%{_sbindir},%{_mandir}/man1}
 
-install %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/calamaris
-install %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/calamaris
-install %{SOURCE3} $RPM_BUILD_ROOT%{_sbindir}
-install calamaris $RPM_BUILD_ROOT%{_bindir}
-install calamaris.1 $RPM_BUILD_ROOT%{_mandir}/man1
+install -p %{SOURCE3} $RPM_BUILD_ROOT%{_sbindir}
+install -p calamaris $RPM_BUILD_ROOT%{_bindir}
+cp -p %{SOURCE1} $RPM_BUILD_ROOT/etc/cron.d/calamaris
+cp -p %{SOURCE2} $RPM_BUILD_ROOT/etc/sysconfig/calamaris
+cp -p calamaris.1 $RPM_BUILD_ROOT%{_mandir}/man1
 
 %clean
 rm -rf $RPM_BUILD_ROOT
